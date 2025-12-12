@@ -33,6 +33,9 @@ nano .env
 MISTRAL_API_KEY=
 PORT=
 
+# Установите зависимости
+npm install
+
 # Запустите сервер
 node server.js
 ```
