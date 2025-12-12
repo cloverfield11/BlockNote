@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlockNote</title>
+    <style>
+        :root {
+            --color-white: #ffffff;
+            --color-light-gray: #f8f8f8;
+            --color-gray: #e0e0e0;
+            --color-dark-gray: #8c8c8c;
+            --color-darker-gray: #666666;
+            --color-black: #000000;
+            --color-soft-black: #111111;
+            --color-border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            overflow: hidden
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .mobile-icon {
+            font-size: 64px;
+            margin-bottom: 30px;
+            color: var(--color-black);
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--color-black);
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--color-darker-gray);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            max-width: 320px;
+        }
+
+        .message-box {
+            background-color: var(--color-light-gray);
+            border: 1px solid var(--color-border);
+            padding: 24px;
+            margin-bottom: 40px;
+            text-align: left;
+            max-width: 400px;
+        }
+
+        .message-box h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-black);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .message-box p {
+            font-size: 0.95rem;
+            color: var(--color-darker-gray);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .message-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button, a.button {
+            padding: 14px 28px;
+            border: 1px solid var(--color-black);
+            background-color: var(--color-white);
+            color: var(--color-black);
+            font-size: 0.95rem;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-width: 160px;
+        }
+
+        button:hover, a.button:hover {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        button.primary, a.button.primary {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        button.primary:hover, a.button.primary:hover {
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            color: var(--color-dark-gray);
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .footer a {
+            color: var(--color-black);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-gray);
+            transition: border-color 0.2s ease;
+        }
+
+        .footer a:hover {
+            border-bottom: 1px solid var(--color-black);
+        }
+
+        .tip {
+            background-color: var(--color-light-gray);
+            border: 1px solid var(--color-border);
+            padding: 20px;
+            margin-top: 30px;
+            max-width: 400px;
+        }
+
+        .tip h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--color-black);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip p {
+            font-size: 0.9rem;
+            color: var(--color-darker-gray);
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            button, a.button {
+                width: 100%;
+            }
+            
+            .mobile-icon {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mobile-icon">📱</div>
+        
+        <h1>BlockNote</h1>
+        <p class="subtitle">Текстовый редактор для создания статей</p>
+        
+        <div class="message-box">
+            <h3>📋 Ограничение доступа</h3>
+            <p>Веб-редактор в настоящее время не адаптирован для мобильных устройств.</p>
+            <p>Для работы с полным функционалом рекомендуется использовать настольный компьютер или ноутбук.</p>
+        </div>
+        
+        <div class="footer">
+            <p>
+                developed by <a href="https://t.me/cloverfield11" target="_blank">@cloverfield11</a>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

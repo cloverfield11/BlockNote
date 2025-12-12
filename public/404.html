@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Страница не найдена</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        :root {
+            --color-white: #ffffff;
+            --color-light-gray: #f8f8f8;
+            --color-gray: #e0e0e0;
+            --color-dark-gray: #8c8c8c;
+            --color-darker-gray: #666666;
+            --color-black: #000000;
+            --color-soft-black: #111111;
+            --color-border: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 80px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 300;
+            color: var(--color-black);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--color-soft-black);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--color-darker-gray);
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        a.button {
+            padding: 12px 24px;
+            border: 1px solid var(--color-black);
+            text-decoration: none;
+            color: var(--color-black);
+            transition: 0.2s;
+            font-size: 0.95rem;
+            font-weight: 400;
+            background-color: var(--color-white);
+            cursor: pointer;
+        }
+
+        a.button.primary {
+            background-color: var(--color-black);
+            color: var(--color-white);
+        }
+
+        a.button.primary:hover {
+            background-color: var(--color-white);
+            color: var(--color-black);
+        }
+
+        a.button.secondary:hover {
+            background-color: var(--color-light-gray);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-white);
+            padding: 15px 20px;
+            z-index: 100;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--color-darker-gray);
+        }
+
+        .footer-content a {
+            color: var(--color-black);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-gray);
+        }
+
+        .footer-content a:hover {
+            border-bottom: 1px solid var(--color-black);
+        }
+
+        @media (max-width: 768px) {
+            h1 { 
+                font-size: 4rem; 
+                margin-bottom: 15px;
+            }
+            
+            h2 { 
+                font-size: 1.4rem; 
+                margin-bottom: 15px;
+            }
+            
+            p { 
+                font-size: 1rem; 
+                margin-bottom: 30px;
+            }
+            
+            /* Скрываем кнопки на мобильных устройствах */
+            .actions {
+                display: none;
+            }
+            
+            .container {
+                padding: 30px 15px;
+            }
+            
+            body {
+                padding-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { 
+                font-size: 3rem; 
+            }
+            
+            h2 { 
+                font-size: 1.2rem; 
+            }
+            
+            p { 
+                font-size: 0.95rem; 
+            }
+        }
+
+        /* Стили для десктопной версии (ширина больше 768px) */
+        @media (min-width: 769px) {
+            .actions {
+                display: flex;
+            }
+            
+            footer {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>404</h1>
+    <h2>Страница не найдена</h2>
+    <p>Возможно, она была удалена или вы перешли по неверной ссылке.</p>
+    
+    <!-- Кнопки действий - скрываются на мобильных -->
+    <div class="actions">
+        <a href="/" class="button primary">На главную</a>
+        <a href="/articles/all" class="button secondary">Все статьи</a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <span>BlockNote</span>
+        <span>developed by <a href="https://t.me/cloverfield11" target="_blank">@cloverfield11</a></span>
+    </div>
+</footer>
+
+<script>
+    // Дополнительная проверка для определения мобильных устройств
+    document.addEventListener('DOMContentLoaded', function() {
+        function checkMobileDevice() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // На мобильных устройствах скрываем футер и кнопки (уже сделано через CSS)
+                // Добавляем дополнительный класс для мобильных устройств
+                document.body.classList.add('mobile-device');
+            } else {
+                document.body.classList.remove('mobile-device');
+            }
+        }
+        
+        // Проверяем при загрузке
+        checkMobileDevice();
+        
+        // Проверяем при изменении размера окна
+        window.addEventListener('resize', checkMobileDevice);
+        
+        // Также проверяем при изменении ориентации устройства
+        window.addEventListener('orientationchange', checkMobileDevice);
+    });
+</script>
+
+</body>
+</html>
